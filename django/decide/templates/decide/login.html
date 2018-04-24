@@ -1,0 +1,8 @@
+<h1>Hello {{e.name}} please log in</h1>
+<form method="post">{% csrf_token %}
+<label >name</label><br />
+<input type="text" name="name" /><br />
+<label >password</label><br />
+<input type="text" name="pwd" /><br />
+<input type="submit" value="Log in" />
+</form>

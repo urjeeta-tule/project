@@ -1,0 +1,40 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.db import models
+
+class Meeting(models.Model):
+	
+	topic = models.CharField(max_length=200)
+	room = models.IntegerField(default=1)
+
+def __str__(self):
+	return self.topic
+
+class Hour(models.Model):
+
+	meeting = models.ForeignKey(Meeting, on_delete=models.CASCADE)	
+	starthr = models.IntegerField(default=9)
+	votes = models.IntegerField(default=0)
+
+def __int__(self):
+	return self.starthr	
+
+class Employee(models.Model):
+
+	meeting = models.ForeignKey(Meeting, on_delete=models.CASCADE)    	
+	name = models.CharField(max_length=200,primary_key=True)
+	pwd = models.CharField(max_length=100,default='abcde')
+
+def __str__(self):
+	return self.name
+
+def setdata(self,nm,pw):
+	self.name = nm
+	self.pw = pwd	
+	
+
+		
+
+
+# Create your models here.
