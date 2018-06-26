@@ -1,0 +1,63 @@
+st = ""
+finalst = ""
+
+for i in range(1,3):
+	
+	with open("esfj"+str(i)+".txt","r") as afile:
+		for line in afile:
+			if line.strip():
+				st = st + line.strip().replace("\t"," ") + " "
+	
+	l = st.split(".")
+	for j in range(0,len(l)):
+		if j%5==0:	
+			finalst = finalst + "ESFJ" + "\t" + l[j-4] + " " + l[j-3] + " " + l[j-2] + " " l[j-1] + " " + l[j] + "\n"
+
+	with open("estj"+str(i)+".txt","r") as afile:
+		for line in afile:
+			if line.strip():
+				st = st + line.strip().replace("\t"," ") + " "
+	
+	l = st.split(".")
+	for j in range(0,len(l)):
+		if j%5==0:	
+			finalst = finalst + "ESTJ" + "\t" + l[j-4] + " " + l[j-3] + " " + l[j-2] + " " l[j-1] + " " + l[j] + "\n"
+
+
+	with open("isfj"+str(i)+".txt","r") as afile:
+		for line in afile:
+			if line.strip():
+				st = st + line.strip().replace("\t"," ") + " "
+	
+	l = st.split(".")
+	for j in range(0,len(l)):
+		if j%5==0:	
+			finalst = finalst + "ISFJ" + "\t" + l[j-4] + " " + l[j-3] + " " + l[j-2] + " " l[j-1] + " " + l[j] + "\n"
+
+		
+
+	with open("isfp"+str(i)+".txt","r") as afile:
+		for line in afile:
+			if line.strip():
+				st = st + line.strip().replace("\t"," ") + " "
+	
+	l = st.split(".")
+	for j in range(0,len(l)):
+		if j%5==0:	
+			finalst = finalst + "ISFP" + "\t" + l[j-4] + " " + l[j-3] + " " + l[j-2] + " " l[j-1] + " " + l[j] + "\n"
+
+	
+	with open("istj"+str(i)+".txt","r") as afile:
+		for line in afile:
+			if line.strip():
+				st = st + line.strip().replace("\t"," ") + " "
+	
+	l = st.split(".")
+	for j in range(0,len(l),20):
+		finalst = finalst + "ISTJ" + "\t" 
+		for k in range(19,0):
+			finalst = finalst + l[j-k]	
+	 	finalst = finalst + "\n"
+	
+
+print finalst
